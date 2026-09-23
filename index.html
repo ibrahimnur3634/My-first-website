@@ -5,136 +5,145 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infinine Smart Solutions</title>
 
+<!-- FONT + ICONS -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: white;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0f172a;
+  color:white;
 }
 
 /* LOADER */
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #020617;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 999;
+#loader{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
 
-#count { font-size: 30px; color: #22c55e; }
-
-.progress {
-  width: 200px;
-  height: 6px;
-  background: #1e293b;
-  margin-top: 10px;
-  border-radius: 10px;
+#count{
+  font-size:70px;
+  color:#22c55e;
+  font-weight:700;
 }
 
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg,#0ea5e9,#22c55e);
-  animation: load 3s linear forwards;
+#welcome{
+  font-size:18px;
+  margin-top:10px;
+  animation:blink 1.5s infinite;
+  text-align:center;
 }
 
-@keyframes load {
-  from { width: 0%; }
-  to { width: 100%; }
+#designer{
+  font-size:12px;
+  margin-top:12px;
+  color:#94a3b8;
 }
 
-#main { display: none; }
-
-header {
-  background: linear-gradient(90deg,#0ea5e9,#22c55e);
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
+@keyframes blink{
+  50%{opacity:0.4}
 }
 
-/* HERO */
-.hero { text-align: center; padding: 30px; }
-
-.btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 13px;
-  margin: 5px;
-  display: inline-block;
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#0ea5e9,#22c55e);
+  padding:15px;
+  text-align:center;
+  font-weight:700;
+  position:relative;
 }
 
-.whatsapp { background:#25D366; color:white; }
-.call { background:#3b82f6; color:white; }
+/* BUTTONS */
+.btn{
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  margin:5px;
+  display:inline-block;
+  font-weight:500;
+}
 
-/* SEARCH */
-#search {
-  width: 90%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
+.whatsapp{background:#25D366;color:white;}
+.call{background:#3b82f6;color:white;}
+
+/* LAYOUT */
+.container{
+  display:flex;
+  gap:15px;
+  padding:15px;
+}
+
+.services{flex:3;}
+.form-box{
+  flex:1;
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+}
+
+/* CATEGORY */
+.category{margin-bottom:18px;}
+.category h3{
+  color:#22c55e;
   margin-bottom:10px;
 }
 
-/* SERVICES */
-.category { padding: 10px; }
-.category h3 { color:#22c55e; }
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-  gap: 10px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;
 }
 
-.card {
+.card{
   background:#1e293b;
-  padding:10px;
+  padding:12px;
   border-radius:10px;
   text-align:center;
   cursor:pointer;
-  font-size:12px;
+  font-size:13px;
+  transition:0.3s;
 }
 
-.card:hover {
+.card:hover{
   background:#334155;
-  transform: scale(1.05);
+  transform:scale(1.03);
 }
 
-/* FORM */
-.form-section {
-  padding: 20px;
-  text-align: center;
+/* INPUTS */
+input{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border:none;
+  border-radius:6px;
 }
 
-.form-section input {
-  width: 90%;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 8px;
-  border: none;
-}
-
-.form-section button {
-  padding: 12px 20px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
+button{
+  width:100%;
+  padding:10px;
   background:#22c55e;
+  border:none;
   color:white;
-  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
 }
 
-footer {
+/* FOOTER */
+footer{
   text-align:center;
   padding:15px;
   font-size:12px;
+  color:#94a3b8;
 }
 </style>
 </head>
@@ -143,176 +152,163 @@ footer {
 
 <!-- LOADER -->
 <div id="loader">
-<h2>WELCOME TO INFININE SMART SOLUTIONS</h2>
-<div id="count">3</div>
-<div class="progress"><div class="progress-bar"></div></div>
+  <div id="count">3</div>
+  <div id="welcome">WELCOME TO INFININE SMART SOLUTIONS</div>
+  <div id="designer">Designed by Sigon Web Designer</div>
 </div>
 
-<div id="main">
+<!-- MAIN -->
+<div id="main" style="display:none;">
 
-<header>Infinine Smart Solutions</header>
+<header>
+Infinine Smart Solutions
+</header>
 
-<div class="hero">
-<h2>Your Trusted Cyber & ICT Partner</h2>
-<p>Fast, Reliable & Affordable Services</p>
+<div style="text-align:center; padding:15px;">
+<h2>Your Trusted Cyber & ICT Service Partner</h2>
+<p>Fast • Reliable • Affordable Digital Services</p>
 
-<a class="btn whatsapp" href="https://wa.me/254711922007">WhatsApp</a>
-<a class="btn call" href="tel:0711922007">Call</a>
+<a class="btn whatsapp" href="https://wa.me/254759240255">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+<a class="btn call" href="tel:0759240255">
+<i class="fas fa-phone"></i> Call
+</a>
 </div>
 
-<!-- SEARCH -->
-<div style="text-align:center;">
-<input type="text" id="search" placeholder="Search service..." onkeyup="searchServices()">
-<p id="notFound" style="display:none; color:red;">
-Service currently unavailable.
-<a href="#" onclick="contactCEO()">Contact CEO</a>
-</p>
-</div>
+<div class="container">
 
 <!-- SERVICES -->
-
-<div id="servicesContainer">
-
-<div class="category">
-<h3>📄 Government Services</h3>
 <div class="services">
-<div class="card" data-name="helb applications" onclick="sendService('HELB Applications')">🎓 HELB Applications</div>
-<div class="card" data-name="kuccps revision" onclick="sendService('KUCCPS Revision')">📚 KUCCPS Revision</div>
-<div class="card" data-name="ecitizen services" onclick="sendService('eCitizen Services')">🆔 eCitizen Services</div>
-<div class="card" data-name="kra pin returns" onclick="sendService('KRA PIN & Returns')">💰 KRA PIN & Returns</div>
-<div class="card" data-name="good conduct" onclick="sendService('Good Conduct')">🛂 Good Conduct</div>
-<div class="card" data-name="passport application" onclick="sendService('Passport Application')">✈️ Passport</div>
-<div class="card" data-name="ntsa services" onclick="sendService('NTSA Services')">🚗 NTSA Services</div>
-<div class="card" data-name="nhif sha" onclick="sendService('SHA / NHIF Services')">🏥 NHIF / SHA</div>
-<div class="card" data-name="nssf services" onclick="sendService('NSSF Services')">🏦 NSSF</div>
+
+<!-- GOVERNMENT -->
+<div class="category">
+<h3><i class="fas fa-landmark"></i> Government Services</h3>
+<div class="grid">
+<div class="card" onclick="send('HELB Loan Application')">HELB Application</div>
+<div class="card" onclick="send('KRA PIN Registration & Returns')">KRA Services</div>
+<div class="card" onclick="send('eCitizen Services')">eCitizen</div>
+<div class="card" onclick="send('KUCCPS Application')">KUCCPS</div>
+<div class="card" onclick="send('Passport Application')">Passport</div>
+<div class="card" onclick="send('Police Clearance Certificate')">Good Conduct</div>
+<div class="card" onclick="send('NTSA TIMS Services')">NTSA</div>
+<div class="card" onclick="send('Birth Certificate Application')">Birth Certificate</div>
+<div class="card" onclick="send('Marriage Certificate Application')">Marriage Cert</div>
+<div class="card" onclick="send('Affidavit Writing')">Affidavits</div>
+<div class="card" onclick="send('CRB Clearance')">CRB Check</div>
 </div>
 </div>
 
+<!-- DOCUMENTS -->
 <div class="category">
-<h3>📑 Document Services</h3>
-<div class="services">
-<div class="card" data-name="typing cv writing" onclick="sendService('Typing & CV Writing')">⌨️ Typing & CV Writing</div>
-<div class="card" data-name="printing" onclick="sendService('Printing')">🖨️ Printing</div>
-<div class="card" data-name="photocopy" onclick="sendService('Photocopy')">📄 Photocopy</div>
-<div class="card" data-name="scanning" onclick="sendService('Scanning')">📠 Scanning</div>
-<div class="card" data-name="binding" onclick="sendService('Binding')">📚 Binding</div>
-<div class="card" data-name="lamination" onclick="sendService('Lamination')">🪪 Lamination</div>
-<div class="card" data-name="document editing" onclick="sendService('Document Editing')">📝 Document Editing</div>
+<h3><i class="fas fa-file-alt"></i> Document Services</h3>
+<div class="grid">
+<div class="card" onclick="send('Printing Services')">Printing</div>
+<div class="card" onclick="send('Typing Services')">Typing</div>
+<div class="card" onclick="send('CV Writing')">CV Writing</div>
+<div class="card" onclick="send('Scanning Services')">Scanning</div>
+<div class="card" onclick="send('Photocopy Services')">Photocopy</div>
+<div class="card" onclick="send('Binding Services')">Binding</div>
+<div class="card" onclick="send('Lamination Services')">Lamination</div>
+<div class="card" onclick="send('Job Application Writing')">Job Applications</div>
 </div>
 </div>
 
+<!-- ICT -->
 <div class="category">
-<h3>💻 ICT Services</h3>
-<div class="services">
-<div class="card" data-name="computer training" onclick="sendService('Computer Training')">🎓 Computer Training</div>
-<div class="card" data-name="windows installation" onclick="sendService('Windows Installation')">🖥️ Windows Installation</div>
-<div class="card" data-name="software installation" onclick="sendService('Software Installation')">📦 Software Installation</div>
-<div class="card" data-name="virus removal" onclick="sendService('Virus Removal')">🛡️ Virus Removal</div>
-<div class="card" data-name="laptop repair" onclick="sendService('Laptop Repair')">🔧 Laptop Repair</div>
-<div class="card" data-name="phone flashing" onclick="sendService('Phone Flashing')">📱 Phone Flashing</div>
-<div class="card" data-name="data recovery" onclick="sendService('Data Recovery')">💾 Data Recovery</div>
-<div class="card" data-name="website creation" onclick="sendService('Website Creation')">🌐 Website Creation</div>
-</div>
-</div>
-
-<div class="category">
-<h3>📢 Business Services</h3>
-<div class="services">
-<div class="card" data-name="logo design" onclick="sendService('Logo Design')">🎨 Logo Design</div>
-<div class="card" data-name="poster design" onclick="sendService('Poster Design')">🖼️ Poster Design</div>
-<div class="card" data-name="business cards" onclick="sendService('Business Cards')">💳 Business Cards</div>
-<div class="card" data-name="social media setup" onclick="sendService('Social Media Setup')">📲 Social Media Setup</div>
-<div class="card" data-name="online marketing" onclick="sendService('Online Marketing')">📈 Online Marketing</div>
-<div class="card" data-name="bulk sms services" onclick="sendService('Bulk SMS Services')">📩 Bulk SMS</div>
+<h3><i class="fas fa-laptop-code"></i> ICT & Computer Services</h3>
+<div class="grid">
+<div class="card" onclick="send('Computer Training')">Training</div>
+<div class="card" onclick="send('Windows Installation')">Windows Install</div>
+<div class="card" onclick="send('Software Installation')">Software Install</div>
+<div class="card" onclick="send('Virus Removal')">Virus Removal</div>
+<div class="card" onclick="send('Laptop Repair')">Laptop Repair</div>
+<div class="card" onclick="send('Phone Flashing')">Phone Flashing</div>
+<div class="card" onclick="send('Website Development')">Web Design</div>
+<div class="card" onclick="send('Email Setup')">Email Setup</div>
+<div class="card" onclick="send('Social Media Setup')">Social Media Setup</div>
 </div>
 </div>
 
 </div>
 
 <!-- FORM -->
-<div class="form-section">
+<div class="form-box">
 <h3>Request a Service</h3>
 
 <input id="name" placeholder="Full Name">
 <input id="phone" placeholder="Phone Number">
 <input id="email" placeholder="Email Address">
-<input id="service" placeholder="Service Required">
+<input id="service" placeholder="Service Needed">
 
-<button onclick="submitForm()">Submit Request</button>
+<button onclick="submitForm()">Send Request</button>
+
+<hr style="margin:10px 0;">
+
+<p style="font-size:12px;">Developer Contact:</p>
+<a href="https://wa.me/254759240255" style="color:#22c55e;">
+Sigon Web Designer
+</a>
+
+</div>
+
 </div>
 
 <footer>
-© 2026 Infinine Smart Solutions |
-<a href="https://wa.me/254759240255?text=Hello%20welcome%20to%20Sigon%20Web%20Designer%20WhatsApp"
-style="color:#22c55e;">
-Designed by Sigon Web Designer
-</a>
+© 2026 Infinine Smart Solutions | Designed by Sigon Web Designer
 </footer>
 
 </div>
 
 <script>
 
-// Loader
+/* LOADER */
 let count=3;
-const counter=document.getElementById("count");
-setInterval(()=>{count--; if(counter) counter.innerText=count;},1000);
+let counter=document.getElementById("count");
 
-setTimeout(()=>{
-document.getElementById("loader").style.display="none";
-document.getElementById("main").style.display="block";
-},3000);
+let interval=setInterval(()=>{
+  count--;
+  counter.innerText=count;
 
-// WhatsApp
-function sendService(service){
-const msg=`Hello, I would like more information about ${service}. Kindly assist.`;
-window.open(`https://wa.me/254711922007?text=${encodeURIComponent(msg)}`);
+  if(count===0){
+    clearInterval(interval);
+    document.getElementById("loader").style.display="none";
+    document.getElementById("main").style.display="block";
+  }
+},1000);
+
+/* SEND */
+function send(service){
+window.open("https://wa.me/254759240255?text=" + encodeURIComponent("Hello, I need " + service));
 }
 
-// Search
-function searchServices(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-let found=false;
-
-cards.forEach(card=>{
-let name=card.getAttribute("data-name");
-if(name.includes(input)){card.style.display="block"; found=true;}
-else{card.style.display="none";}
-});
-
-document.getElementById("notFound").style.display = found?"none":"block";
-}
-
-// Contact CEO
-function contactCEO(){
-const msg="Hello, I am seeking inquiry for a certain service. Is it available?";
-window.open(`https://wa.me/254711922007?text=${encodeURIComponent(msg)}`);
-}
-
-// Form
+/* FORM */
 function submitForm(){
+
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
 let email=document.getElementById("email").value;
 let service=document.getElementById("service").value;
 
 if(!name||!phone||!email||!service){
-alert("Please fill all fields");
+alert("Please fill in all fields.");
 return;
 }
 
-const msg=`Hello, my name is ${name}.
-Phone Number: ${phone}
-Email: ${email}
+window.open("https://wa.me/254759240255?text=" + encodeURIComponent(
+`Hello, my name is ${name}.
+Phone: ${phone}
+Service needed: ${service}`
+));
 
-I would like to request the following service: ${service}.
+alert("Request sent successfully!");
 
-Kindly do for me the service I requested. Thank you.`;
-
-window.open(`https://wa.me/254711922007?text=${encodeURIComponent(msg)}`);
+document.getElementById("name").value="";
+document.getElementById("phone").value="";
+document.getElementById("email").value="";
+document.getElementById("service").value="";
 }
-
 </script>
 
 </body>
